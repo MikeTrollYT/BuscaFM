@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuscaFM</title>
+    <style>
+        @font-face {
+            font-family: 'GameBubble';
+            src: url('fuente/GameBubble.otf') format('opentype'); /* Cambia a .ttf si es necesario */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'GameBubble', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('fondo/fondo.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5; /* Ajusta la opacidad del fondo */
+            z-index: -1;
+        }
+
+        .center-text {
+            font-size: 10vw;
+            background: linear-gradient(45deg, #0000ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-decoration: none; 
+            animation: moveText 3s infinite alternate;
+        }
+
+        .center-text:hover {
+            text-decoration: none; 
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <a href="https://miketroll.es/Proximamente" class="center-text">QUEDA POCO...</a>
+</body>
+</html>
