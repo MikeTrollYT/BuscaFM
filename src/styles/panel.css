@@ -1,0 +1,201 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+  }
+  
+  header {
+    text-align: center;
+    padding: 30px;
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #00aaff;
+  }
+  
+  footer {
+    margin-top: 100px;
+  }
+  
+  /* Contenedor principal de radios */
+  .radios-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las radios pasen a la siguiente fila */
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 20px;
+  }
+  
+  .radio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    cursor: pointer;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .radio img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .radio p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #00aaff;
+  }
+  
+  .radio:hover {
+    transform: scale(1.05); /* Efecto al pasar el cursor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilo del reproductor */
+  #player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que los elementos estén espaciados */
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-top: 2px solid #444;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Siempre visible sobre el contenido */
+  }
+  
+  #player img#player-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace la imagen circular */
+  }
+  
+  .player-info {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  #player-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  #player-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  #player-button .material-icons {
+    font-size: 30px;
+    color: white;
+    transition: transform 0.2s;
+  }
+  
+  #player-button .material-icons.loading {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Contenedor del buscador */
+  .search-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #search-bar {
+    width: 200px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .radio {
+        width: 120px; /* Reduce tamaño de las radios */
+    }
+  
+    .radio img {
+        height: 120px; /* Imagen adaptada al tamaño reducido */
+    }
+  
+    .radio p {
+        font-size: 12px;
+    }
+  
+    #player img#player-image {
+        width: 40px;
+        height: 40px;
+    }
+  
+    #player-button .material-icons {
+        font-size: 25px;
+    }
+  
+    #search-bar {
+        width: 150px; /* Reducir tamaño del buscador */
+        font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .radios-container {
+        gap: 10px; /* Reduce espacio entre las radios */
+    }
+  
+    .radio {
+        width: 100px; /* Radios aún más pequeñas */
+    }
+  
+    .radio img {
+        height: 100px;
+    }
+  
+    .radio p {
+        font-size: 10px;
+    }
+  
+    #search-bar {
+        width: 120px; /* Buscador más pequeño */
+    }
+  }
+  
